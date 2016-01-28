@@ -4,7 +4,7 @@ var renderer = Detector.webgl ? new THREE.WebGLRenderer() : new THREE.CanvasRend
 		
 		
 var width  = window.innerWidth,
-	height = window.innerHeight;
+	height = window.innerHeight - 30;
 	
 renderer.setSize(width, height);
 
@@ -46,8 +46,8 @@ render();
 //create the cube object
 var buzz = new THREE.Object3D;
 var loader = new THREE.TextureLoader();
-loader.load( 'buzz.png', function ( texture ) {
-	var geometry = new THREE.BoxGeometry(1, 1, 1);
+loader.load( 'box.jpg', function ( texture ) {
+	var geometry = new THREE.BoxGeometry(5, 5, 5);
 	var material = new THREE.MeshBasicMaterial( { map: texture });
 	var mesh = new THREE.Mesh( geometry, material );
 	mesh.scale.set(1,1,1);
